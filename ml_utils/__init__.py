@@ -1,6 +1,6 @@
 # Utils
 from .conf import ConfHandler
-from .files import Files, PathHandler
+from .files import FHandler, PathHandler
 # from .eda import EDA
 # from .s3handler import S3Handler
 from .engines import Engine
