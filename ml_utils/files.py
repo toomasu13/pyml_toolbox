@@ -348,6 +348,8 @@ class PathHandler():
             file_suffix: str
                 The default file extension
         """
+        self._file_name = None
+        self.file_suffix = ''
         
         if file_dir is not None and file_name is None and file_suffix is None:
             self.file_path = file_dir
@@ -385,6 +387,10 @@ class PathHandler():
         if not self.is_path():
             self.path.mkdir(parents=True, exist_ok=True)
     
+    def is_file(self):
+        
+        return self.file_path.is_file()
+    
     @property
     def suffix(self):
         
@@ -411,7 +417,10 @@ class PathHandler():
     @property
     def name(self):
         
-        return f'{self._file_name}.{self.file_suffix}'
+        if self._file_name is None:
+            return None
+        else: 
+            return f'{self._file_name}.{self.file_suffix}'
     
     @property
     def file_path(self):
@@ -429,20 +438,22 @@ class PathHandler():
             path_file: Path
                 a path to the file
         """
-        return self.path.joinpath(self.name)
+        if self.name is None:
+            return self.path
+        else:
+            return self.path.joinpath(self.name)
     
     @file_path.setter
     def file_path(self, file_path):
         
         path_file = Path(file_path)
-        self.path = path_file.parent
-        self.file_name = Path(path_file.stem).stem.rstrip('.')
-        self.suffix = ''.join([ic for ic in path_file.suffixes]).lstrip('.')
-    
-    def is_file(self):
+        if path_file.suffixes or file_path[-1] == '.':
+            self.path = path_file.parent
+            self.file_name = Path(path_file.stem).stem.rstrip('.')
+            self.suffix = ''.join([ic for ic in path_file.suffixes]).lstrip('.')
+        else:
+            self.path = path_file
         
-        return self.file_path.is_file()
-
     def __str__(self):
         
         return str(self.file_path)
