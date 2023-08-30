@@ -1,3 +1,8 @@
+#pyml_toolbox
+
+__version__ = '0.1.0'
+__author__ = 'Toomas Kirt'
+
 # Utils
 from pyml_utils import init_logger
 from pyml_utils import ConfHandler

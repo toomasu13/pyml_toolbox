@@ -6,22 +6,17 @@ The `Engine` class is designed to manage stored logins and database engine confi
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Installation](#installation)
 - [Usage](#usage)
   - [Initialization](#initialization)
   - [Setting Login Credentials](#setting-login-credentials)
   - [Defining Database Drivers](#defining-database-drivers)
   - [Configuring Engine Parameters](#configuring-engine-parameters)
   - [Executing Queries and Data Operations](#executing-queries-and-data-operations)
-- [Examples](#examples)
+  - [SQLite Examples](#examples)
 
 ## Introduction
 
 The `Engine` class enables seamless interaction with databases by storing and managing login credentials, engine configurations, and executing SQL queries. It simplifies the process of connecting to databases, executing queries, and handling data operations.
-
-## Installation
-
-To use the `Engine` class, you can include it in your Python project. No external libraries are required.
 
 ## Usage
 
@@ -91,39 +86,12 @@ df = pd.DataFrame({'name': ['User 1', 'User 2', 'User 3', 'User 4']})
 E.to_sql(df, 'users', 'sqlite_mem')
 ```
 
-## Examples
+### SQLite Examples 
 
 ```python
 # Initialize Engine
 E = Engine(dir_engine='/file/path')
 
-# Set login credentials
-E.set_login(login='snowflake', user='name', password='pw')
-
-# Get login credentials
-user, password = E.get_login('snowflake')
-
-# Set database driver and engine configuration
-E.set_driver('snowflake', url= '{driver}://{user}:{password}@{host}/{database}/{schema}?role={role}&warehouse={warehouse}')
-dict_snowflake = {
-    'driver': 'snowflake',
-    'login': 'snowflake',
-    'host': 'snowflake.host',
-    'database': 'db',
-    'schema': 'sc',
-    'warehouse': 'wh',
-    'role': 'user_role'
-}
-E.set_engine('snowflake', **dict_snowflake)
-
-# Execute SQL query
-query = '''
-    SELECT
-        *
-    FROM client 
-    LIMIT 10
-'''
-df = E.from_sql(query, 'snowflake')
 
 # Set SQLite in-memory engine configuration
 E.set_driver('sqlite', url='{driver}://{database}')

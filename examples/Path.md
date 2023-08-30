@@ -16,7 +16,7 @@ The `PathHandler` class provides methods and attributes to:
 ## Example Usage
 
 ```python
-from path_handler import PathHandler
+from pyml_toolbox import PathHandler
 
 # Initialize a PathHandler object with file components
 path_handler = PathHandler(file_dir='/tmp/test', file_name='script', file_suffix='sh')
@@ -63,10 +63,6 @@ print(f'Full file path: {path_handler.file_path}')
 - `delete_file(path_file=None)`: Delete a file from the path directory.
 - `delete_dir(path_dir=None)`: Delete a directory (must be empty).
 - `is_file()`: Check if the path points to a file.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 

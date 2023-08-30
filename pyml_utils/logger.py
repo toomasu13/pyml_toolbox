@@ -5,7 +5,7 @@ import importlib
 
 
 def init_logger(name, level=logging.INFO, handler='stream', file=None, c_format=None):
-    """ Initializes logger inside a jupyter notebook. Return a logger with the specified name.
+    """ The function initializes logger inside a jupyter notebook. Return a logger with the specified name.
         
         For example, initiate a logger inside a class:
         self.logger = init_logger(self.__class__.__name__, level=log_level)

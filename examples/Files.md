@@ -72,7 +72,7 @@ class ParquetFile(FileHandler):
 ### Using the `JsonFile` class
 
 ```python
-from file_handlers import JsonFile
+from pyml_toolbox import JsonFile
 
 # Initialize a JsonFile object
 json_file = JsonFile('data.json')
@@ -90,7 +90,7 @@ print(read_data)  # Output: {'name': 'John', 'age': 30}
 ### Using the `CsvFile` class
 
 ```python
-from file_handlers import CsvFile
+from pyml_toolbox import CsvFile
 import pandas as pd
 
 # Initialize a CsvFile object
@@ -113,7 +113,7 @@ print(read_df)
 ### Using the `ParquetFile` class
 
 ```python
-from file_handlers import ParquetFile
+from pyml_toolbox import ParquetFile
 import pandas as pd
 
 # Initialize a ParquetFile object
@@ -133,6 +133,3 @@ read_df = parquet_file.read()
 print(read_df)
 ```
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).

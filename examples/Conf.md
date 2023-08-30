@@ -15,7 +15,7 @@ The `ConfHandler` class provides methods and attributes to:
 ## Example Usage
 
 ```python
-from conf_handler import ConfHandler
+from pyml_toolbox import ConfHandler
 
 # Initialize a ConfHandler object with a configuration file
 conf_handler = ConfHandler(file_conf='conf1.json', log_level=20)
@@ -57,10 +57,6 @@ conf_handler.reset_conf()
 - `update_key(key, value)`: Update or add a key-value pair.
 - `get_key(key, ret=None)`: Get the value of a key with an optional default value.
 - `reset_conf()`: Clear the configuration data and save an empty dictionary.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
