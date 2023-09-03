@@ -15,7 +15,7 @@ pip install pyml_toolbox
 
 ### Engine Class
 
-The `Engine` class enables seamless management of stored logins, database engine configurations, and query executions.
+The `Engine` class enables seamless management of stored logins, database engine configurations, and query executions. 
 
 Example Usage:
 
@@ -25,7 +25,7 @@ from pyml_toolbox import Engine
 # Initialize an Engine object with optional parameters
 E = Engine(dir_engine='/file/path', is_encode=True, log_level=20)
 
-# Add a new login credential for a database source
+# Add a new login credential for a database source, By storing the credentials using the Engine class once, there is no need to expose them within Jupyter notebooks any more.
 E.set_login(login='snowflake', user='name', password='pw')
 
 # Set the URL template for a database driver

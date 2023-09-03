@@ -16,7 +16,7 @@ The `Engine` class is designed to manage stored logins and database engine confi
 
 ## Introduction
 
-The `Engine` class enables seamless interaction with databases by storing and managing login credentials, engine configurations, and executing SQL queries. It simplifies the process of connecting to databases, executing queries, and handling data operations.
+The `Engine` class enables seamless interaction with databases by storing and managing login credentials, engine configurations, and executing SQL queries. It simplifies the process of connecting to databases, executing queries, and handling data operations. By storing the credentials using the Engine class, there is no need to expose them within Jupyter notebooks, thereby mitigating the risk of credentials being unintentionally exposed in a public Git repository or any other public location.
 
 ## Usage
 
