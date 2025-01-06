@@ -114,8 +114,10 @@ class PathHandler():
         
         if file_dir is None:
             self._path_file = Path.cwd()
-        elif file_dir == '@home':
+        elif file_dir == '@home' or file_dir[0] = '~':
             self._path_file = Path.home()
+        elif file_dir[0] != '/':
+            self._path_file = Path.cwd().joinpath(file_dir)
         else:
             self._path_file = Path(file_dir)
 
