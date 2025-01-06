@@ -1,10 +1,14 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r") as file:
+    long_description = file.read()
 
 setup(
     name='pyml_toolbox',
     version='0.1.0',
     description='A machine learning toolbox and utility functions',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url='https://github.com/toomasu13/pyml_toolbox',
     author='Toomas Kirt',
     author_email='Toomas.Kirt@gmail.com',
